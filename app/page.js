@@ -128,7 +128,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/appointment"
+                href="/login"
                 className="bg-white text-green-800 hover:bg-gray-100 px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
               >
                 Book a Consultation

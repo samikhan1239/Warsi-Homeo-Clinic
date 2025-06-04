@@ -1,3 +1,4 @@
+// app/api/admin/users/details/route.js
 export const dynamic = "force-dynamic";
 import prisma from "../../../../../lib/prisma";
 import { verifyToken } from "../../../../../lib/jwt";
@@ -33,7 +34,8 @@ export async function GET(request) {
         name: true,
         email: true,
         role: true,
-        courses: {
+        enrolledCourses: {
+          // Changed from 'courses' to 'enrolledCourses'
           select: { id: true, title: true },
         },
       },
@@ -43,7 +45,11 @@ export async function GET(request) {
   } catch (error) {
     console.error("GET /api/admin/users/details error:", error);
     return NextResponse.json(
-      { message: "Error fetching user details", patients: [], students: [] },
+      {
+        message: `Error fetching user details: ${error.message}`,
+        patients: [],
+        students: [],
+      },
       { status: 500 }
     );
   }

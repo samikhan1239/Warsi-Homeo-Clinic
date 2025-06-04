@@ -43,16 +43,13 @@ export default function PatientAppointments() {
   const [formErrors, setFormErrors] = useState({});
   const [activeTab, setActiveTab] = useState("all");
 
-  const availableTimes = [
-    "09:00 AM",
-    "10:00 AM",
-    "11:00 AM",
-    "02:00 PM",
-    "03:00 PM",
-    "04:00 PM",
-  ];
+  const availableTimes = ["07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM"];
 
   const reasonOptions = [
+    "Consultation",
+    "Chekup",
+    "Follow-up",
+
     "Chronic Pain",
     "Autoimmune Disorder",
     "Mental Health",
@@ -203,24 +200,24 @@ export default function PatientAppointments() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center">
                   <Image
-                    src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src="/mamu.jpg"
                     alt="Dr. Sarah Johnson"
                     width={128} // Matches w-32 (32 * 4 = 128px)
                     height={128} // Matches h-32 (32 * 4 = 128px)
                     className="rounded-full object-cover mb-4"
                   />
                   <h3 className="text-xl font-medium text-gray-800">
-                    Dr. Sarah Johnson
+                    Dr. Tahir Mohammad Warsi
                   </h3>
                   <p className="text-sm text-gray-600 mb-4">
                     Chief Homeopathic Physician
                   </p>
                   <p className="text-gray-700 text-center">
-                    Dr. Sarah Johnson is a renowned homeopathic physician with
-                    over 15 years of experience specializing in chronic
+                    Dr. Tahir Mohammad Warsi is a renowned homeopathic physician
+                    with over 15 years of experience specializing in chronic
                     diseases, autoimmune disorders, and mental health. Fluent in
-                    English and Spanish, she provides compassionate care at
-                    WARSI HOMOEO CLINIC.
+                    English and Hindi, she provides compassionate care at WARSI
+                    HOMOEO CLINIC.
                   </p>
                 </CardContent>
               </Card>
