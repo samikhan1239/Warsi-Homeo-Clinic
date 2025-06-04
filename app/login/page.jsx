@@ -52,13 +52,6 @@ export default function Login() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Section with Image and Info for Large Screens */}
           <div className="relative hidden lg:block">
-            <Image
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&h=800&q=80"
-              alt="Homeopathic Clinic"
-              width={1400} // Matches w=1400 in the URL
-              height={800} // Matches h=800 in the URL
-              className="w-full h-[600px] object-cover rounded-2xl shadow-2xl"
-            />
             <div className="absolute bottom-8 left-8 right-8">
               <h2 className="text-white text-4xl font-bold leading-tight drop-shadow-lg">
                 Embrace Natural Healing
