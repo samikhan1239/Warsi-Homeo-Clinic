@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              Int           @id @default(autoincrement())
+  email           String        @unique
+  password        String
+  name            String
+  role            String
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  appointments    Appointment[]
+  createdCourses  Course[]      @relation("CourseInstructor")
+  enrolledCourses Course[]      @relation("CourseStudents")
+}
+
+model Appointment {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  firstName String
+  lastName  String
+  email     String
+  phone     String
+  date      DateTime
+  time      String
+  reason    String
+  status    String   @default("PENDING")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Disease {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  symptoms    String?
+  remedies    String?
+  precautions String?
+  videoUrl    String?
+  videoLink   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Course {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  duration    Int?
+  level       String?
+  category    String?
+  imageUrl    String?
+  userId      Int?
+  instructor  User?    @relation("CourseInstructor", fields: [userId], references: [id])
+  students    User[]   @relation("CourseStudents")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  videos      Video[]
+}
+
+model Video {
+  id            Int      @id @default(autoincrement())
+  title         String
+  url           String? // For Cloudinary uploads
+  courseId      Int
+  course        Course   @relation(fields: [courseId], references: [id])
+  lectureNumber Int?
+  description   String?
+  duration      Int?
+  videoLink     String? // For external links (e.g., YouTube)
+  isFree        Boolean? @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
