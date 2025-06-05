@@ -10,7 +10,8 @@ const DoctorsPage = () => {
     specialty: "Senior Homeopathic Physician",
     experience: "15+ years experience",
     image: "/mamu.jpg", // Use your actual local path or external url
-    education: "BHMS, MD Homeopathy",
+    education:
+      "BHMS, Homeopathy, Professor - Narayan Shree Homoeopathic Medical College",
     specializations: [
       "Chronic Diseases",
       "Autoimmune Disorders",
@@ -113,7 +114,10 @@ const DoctorsPage = () => {
               <MapPin className="h-6 w-6 text-green-600 mr-3 mt-1" />
               <div>
                 <h3 className="font-semibold text-gray-800 mb-1">Location</h3>
-                <p>123 Healing Street, Wellness Valley, India</p>
+                <p>
+                  Shop No 2 Lala Lajpat Rai Colony Near Super Shadi Hall Bagh
+                  Dilkusha, Raisen Road , Bhopal (MP)
+                </p>
               </div>
             </div>
 
@@ -121,7 +125,7 @@ const DoctorsPage = () => {
               <Phone className="h-6 w-6 text-green-600 mr-3 mt-1" />
               <div>
                 <h3 className="font-semibold text-gray-800 mb-1">Phone</h3>
-                <p>+91 98765 43210</p>
+                <p>+91 7697160607</p>
               </div>
             </div>
 
