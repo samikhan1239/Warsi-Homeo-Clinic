@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
-
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 import {
   Card,
@@ -21,9 +20,17 @@ export default function CourseDetails() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (isNaN(id)) {
+      toast.error("Invalid course ID");
+      setLoading(false);
+      return;
+    }
+
     const fetchCourse = async () => {
       try {
-        const res = await axios.get(`/api/student/courses/${id}`);
+        const res = await axios.get(`/api/student/courses/${id}`, {
+          timeout: 5000,
+        });
         console.log("CourseDetails: Fetched course", res.data);
         setCourse(res.data);
       } catch (error) {
@@ -31,7 +38,12 @@ export default function CourseDetails() {
           message: error.message,
           response: error.response?.data,
         });
-        toast.error(error.response?.data?.message || "Error fetching course");
+        const message =
+          error.response?.data?.message || "Error fetching course";
+        toast.error(message);
+        if (error.response?.status === 401) {
+          window.location.href = "/login";
+        }
       } finally {
         setLoading(false);
       }
@@ -50,24 +62,34 @@ export default function CourseDetails() {
   if (!course) {
     return (
       <div className="py-8 text-center">
-        <p className="text-gray-600">Course not found.</p>
+        <p className="text-gray-600">
+          Course not found or you are not enrolled.
+        </p>
       </div>
     );
   }
 
   return (
     <div className="py-8">
+      <Toaster />
       <h2 className="text-3xl font-bold text-green-700 mb-8">{course.title}</h2>
       <Card className="shadow-lg border border-gray-200">
-        {course.imageUrl && (
-          <Image
-            src={course.imageUrl}
-            alt={course.title}
-            fill
-            style={{ objectFit: "cover" }}
-            className="rounded-t-lg"
-          />
-        )}
+        <div className="relative h-48">
+          {course.imageUrl ? (
+            <Image
+              src={course.imageUrl}
+              alt={course.title}
+              fill
+              style={{ objectFit: "cover" }}
+              className="rounded-t-lg"
+              onError={() =>
+                console.error("Failed to load image:", course.imageUrl)
+              }
+            />
+          ) : (
+            <Skeleton className="h-full w-full rounded-t-lg" />
+          )}
+        </div>
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-green-700">
             {course.title}

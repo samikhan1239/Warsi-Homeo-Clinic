@@ -120,14 +120,15 @@ const ContactPage = () => {
               <div className="mt-8">
                 <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden bg-gray-100">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0673274807!2d-122.41941708439499!3d37.77492977975903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQ2JzI5LjciTiAxMjLCsDI1JzA2LjYiVw!5e0!3m2!1sen!2sus!4v1635786983800!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.193664877655!2d77.42416441496675!3d23.254389484832694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE1JzE1LjgiTiA3N8KwMjUnMzYuMyJF!5e0!3m2!1sen!2sin!4v1698799999999!5m2!1sen!2sin"
                     width="100%"
-                    height="300"
+                    height="400"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Clinic Location"
+                    className="rounded-lg shadow-md"
                   ></iframe>
                 </div>
               </div>
