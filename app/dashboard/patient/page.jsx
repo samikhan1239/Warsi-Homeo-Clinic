@@ -217,7 +217,7 @@ export default function PatientAppointments() {
                     with over 15 years of experience specializing in chronic
                     diseases, autoimmune disorders, and mental health. Fluent in
                     English and Hindi, she provides compassionate care at WARSI
-                    HOMOEO CLINIC.
+                    homeo CLINIC.
                   </p>
                 </CardContent>
               </Card>

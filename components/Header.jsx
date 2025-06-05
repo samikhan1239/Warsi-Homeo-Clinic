@@ -81,12 +81,12 @@ const Header = () => {
         >
           <Image
             src="/logo.jpg"
-            alt="WARSI HOMOEO CLINIC Logo"
+            alt="WARSI homeo CLINIC Logo"
             width={40}
             height={40}
             className="rounded-full"
           />
-          <span className="whitespace-nowrap">WARSI HOMOEO CLINIC</span>
+          <span className="whitespace-nowrap">WARSI HOMEO CLINIC</span>
         </Link>
 
         {/* Desktop Nav */}

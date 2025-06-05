@@ -11,7 +11,7 @@ const DoctorsPage = () => {
     experience: "15+ years experience",
     image: "/mamu.jpg", // Use your actual local path or external url
     education:
-      "BHMS, Homeopathy, Professor - Narayan Shree Homoeopathic Medical College",
+      "BHMS, Homeopathy, Professor - Narayan Shree homeopathic Medical College",
     specializations: [
       "Chronic Diseases",
       "Autoimmune Disorders",

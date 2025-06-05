@@ -52,8 +52,7 @@ const ServicesPage = () => {
         "Reduced reliance on conventional medications (under medical supervision)",
         "Long-term management strategies for better quality of life",
       ],
-      image:
-        "https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "/p7.png",
     },
     {
       id: "allergies",
@@ -70,8 +69,7 @@ const ServicesPage = () => {
         "Decreased sinus congestion and inflammation",
         "Strengthened immune response to common allergens",
       ],
-      image:
-        "https://images.pexels.com/photos/4047346/pexels-photo-4047346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "/p8.png",
     },
     {
       id: "skin",
@@ -88,8 +86,7 @@ const ServicesPage = () => {
         "Addressing emotional aspects that may trigger or worsen skin conditions",
         "Personalized skin care recommendations to complement treatments",
       ],
-      image:
-        "https://images.pexels.com/photos/7446143/pexels-photo-7446143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "/p9.jpg",
     },
     {
       id: "digestive",
@@ -106,8 +103,7 @@ const ServicesPage = () => {
         "Management of food sensitivities and intolerances",
         "Support for gut microbiome health and balance",
       ],
-      image:
-        "https://images.pexels.com/photos/6941883/pexels-photo-6941883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "/p10.webp",
     },
     {
       id: "mental",
@@ -124,8 +120,7 @@ const ServicesPage = () => {
         "Support during major life transitions and grief",
         "Complementary approach that works alongside conventional therapy",
       ],
-      image:
-        "https://images.pexels.com/photos/3760607/pexels-photo-3760607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "/p5.png",
     },
     {
       id: "pediatric",
@@ -142,8 +137,7 @@ const ServicesPage = () => {
         "Help with developmental, behavioral, and emotional challenges",
         "Building a foundation for lifelong health and resilience",
       ],
-      image:
-        "https://images.pexels.com/photos/3807737/pexels-photo-3807737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "/p11.jpg",
     },
     {
       id: "consultation",

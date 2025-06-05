@@ -9,7 +9,7 @@ const AboutPage = () => {
       year: "2003",
       title: "Clinic Foundation",
       description:
-        "WARSI HOMOEO CLINIC Homeopathic Clinic was established with a vision to provide natural healing solutions.",
+        "WARSI homeo CLINIC Homeopathic Clinic was established with a vision to provide natural healing solutions.",
     },
     {
       year: "2008",
@@ -65,11 +65,20 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-16">
+      <div className="  shadow-xl">
+        <Image
+          src="/banner4.jpg"
+          alt="YouTube Banner"
+          width={500} // Specify appropriate width
+          height={200} // Match the h-[200px] or h-[500px] based on your design
+          className="w-full h-[100px] md:h-[500px] object-cover"
+        />
+      </div>
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            About WARSI HOMOEO CLINIC
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-9 py-6">
+            About WARSI HOMEO CLINIC
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Two decades of excellence in homeopathic healing, combining
@@ -102,7 +111,7 @@ const AboutPage = () => {
             </div>
             <div className="md:w-1/2">
               <Image
-                src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src="/p3.png"
                 alt="Homeopathic medicines"
                 width={1260} // Matches w=1260 in the URL
                 height={750} // Matches h=750 in the URL
@@ -134,43 +143,6 @@ const AboutPage = () => {
         </div>
 
         {/* Timeline */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
-            Our Journey
-          </h2>
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-green-200"></div>
-
-            {/* Timeline Items */}
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`relative flex items-center ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
-                >
-                  {/* Timeline Point */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-green-600"></div>
-
-                  {/* Content */}
-                  <div
-                    className={`w-5/12 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}
-                  >
-                    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                      <span className="text-green-600 font-bold text-lg">
-                        {milestone.year}
-                      </span>
-                      <h3 className="text-xl font-semibold text-gray-800 mt-2 mb-2">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-gray-600">{milestone.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
         {/* CTA Section */}
         <div className="bg-green-50 rounded-xl p-8 md:p-12 text-center">

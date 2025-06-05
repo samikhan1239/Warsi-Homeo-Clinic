@@ -1,4 +1,3 @@
-// app/page.jsx
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -8,6 +7,7 @@ import {
   Users,
   UserCheck,
   TrendingUp,
+  Headphones,
 } from "lucide-react";
 import ServiceCard from "../components/ui/ServiceCard";
 import DoctorCard from "../components/ui/DoctorCard";
@@ -22,8 +22,7 @@ export default function Home() {
       description:
         "Comprehensive treatment plans for chronic conditions like arthritis, diabetes, and hypertension.",
       icon: "Activity",
-      image:
-        "https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "/p4.png",
     },
     {
       id: "allergies",
@@ -31,8 +30,7 @@ export default function Home() {
       description:
         "Natural remedies for allergies, asthma, and other respiratory conditions without side effects.",
       icon: "Lungs",
-      image:
-        "https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "/p1.jpg",
     },
     {
       id: "mental",
@@ -40,8 +38,7 @@ export default function Home() {
       description:
         "Homeopathic approaches to anxiety, depression, stress, and sleep disorders.",
       icon: "Brain",
-      image:
-        "https://images.pexels.com/photos/3760607/pexels-photo-3760607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "/p2.jpg",
     },
   ];
 
@@ -59,7 +56,7 @@ export default function Home() {
       id: 1,
       name: "Aarav Mehta",
       testimonial:
-        "I had been suffering from sinus problems for years. After starting treatment at WARSI HOMOEO CLINIC, my breathing has improved drastically, and I rarely fall sick now.",
+        "I had been suffering from sinus problems for years. After starting treatment at WARSI homeo CLINIC, my breathing has improved drastically, and I rarely fall sick now.",
       rating: 5,
       image:
         "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&fit=crop",
@@ -77,7 +74,7 @@ export default function Home() {
       id: 3,
       name: "Rahul Verma",
       testimonial:
-        "I was dealing with chronic acidity and digestion issues. Thanks to WARSI HOMOEO CLINIC’s natural remedies, I feel light and energetic every day.",
+        "I was dealing with chronic acidity and digestion issues. Thanks to WARSI homeo CLINIC’s natural remedies, I feel light and energetic every day.",
       rating: 5,
       image:
         "https://images.pexels.com/photos/3771830/pexels-photo-3771830.jpeg?auto=compress&cs=tinysrgb&w=800&h=800&fit=crop",
@@ -96,78 +93,38 @@ export default function Home() {
   const stats = [
     { id: 1, value: "20+", label: "Years of Excellence", icon: "Award" },
     { id: 2, value: "15,000+", label: "Satisfied Patients", icon: "Users" },
-    { id: 3, value: "10+", label: "Specialist Doctors", icon: "UserCheck" },
+    { id: 3, value: "24/7", label: "Patient Support", icon: "Headphones" },
     { id: 4, value: "95%", label: "Success Rate", icon: "TrendingUp" },
   ];
 
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative py-20 md:py-24 lg:py-32 overflow-hidden bg-green-50">
+        <div className="">
           <Image
-            src="https://images.pexels.com/photos/3735747/pexels-photo-3735747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src="/banner3.png"
             alt="Herbal medicine background"
-            fill
-            style={{ objectFit: "cover" }}
-            priority
+            height={500}
+            width={500}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-800/80 to-green-700/70"></div>
+          <div className="" /> {/* Overlay for better text readability */}
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Natural Healing Through Homeopathic Excellence
-            </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-100">
-              Discover gentle, effective, and personalized treatments that
-              address the root cause of your health concerns, not just the
-              symptoms.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/login"
-                className="bg-white text-green-800 hover:bg-gray-100 px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
-              >
-                Book a Consultation
-              </Link>
-              <Link
-                href="/services"
-                className="border border-white text-white hover:bg-white/10 px-6 py-3 rounded-full font-medium transition-colors text-center inline-flex items-center justify-center"
-              >
-                Explore Our Services
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-
-            <div className="mt-12 flex flex-wrap gap-6 items-center">
-              <div className="flex -space-x-4">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-full border-2 border-white overflow-hidden"
-                  >
-                    <Image
-                      src={`https://images.pexels.com/photos/${
-                        3756679 + i
-                      }/pexels-photo-${3756679 + i}.jpeg?auto=compress&cs=tinysrgb&w=150`}
-                      alt={`Patient ${i}`}
-                      width={40}
-                      height={40}
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div>
-                <p className="text-sm text-gray-200">
-                  Trusted by <span className="font-semibold">15,000+</span>{" "}
-                  patients
-                </p>
-              </div>
-            </div>
+        <div className="container mx-auto px-4 relative z-10 py-8">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              href="/login"
+              className="bg-green-700 text-white hover:bg-white hover:text-green-700 px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
+            >
+              Book an Appointment
+            </Link>
+            <Link
+              href="/services"
+              className="border border-white text-green-700 hover:bg-white hover:text-green-700 px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
+            >
+              View Services
+            </Link>
           </div>
         </div>
 
@@ -187,27 +144,18 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 bg-gray-50">
+      <section className=" bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
-              <Image
-                src="https://images.pexels.com/photos/3376790/pexels-photo-3376790.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="Homeopathic medicines and herbs"
-                width={1260}
-                height={750}
-                className="rounded-lg shadow-xl w-full h-auto object-cover"
-              />
-            </div>
-            <div className="md:w-1/2">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                Welcome to WARSI HOMOEO CLINIC Homeopathic Clinic
+                Welcome to WARSI HOMEO CLINIC
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Founded in 2003, WARSI HOMOEO CLINIC has been at the forefront
-                of homeopathic medicine, offering gentle yet effective
-                treatments for a wide range of acute and chronic conditions. Our
-                approach focuses on treating the whole person, not just isolated
+                Founded in 2005, WARSI homeo CLINIC has been at the forefront of
+                homeopathic medicine, offering gentle yet effective treatments
+                for a wide range of acute and chronic conditions. Our approach
+                focuses on treating the whole person, not just isolated
                 symptoms.
               </p>
               <ul className="space-y-3 mb-8">
@@ -231,12 +179,21 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
+            <div className="md:w-1/2">
+              <Image
+                src="/banner2.jpg"
+                alt="Homeopathic medicines and herbs"
+                width={1260}
+                height={750}
+                className="rounded-lg shadow-xl w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
@@ -268,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-green-700 text-white">
+      <section className="py-20 bg-green-700 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat) => (
@@ -279,7 +236,7 @@ export default function Home() {
       </section>
 
       {/* Doctors Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 max-w-md">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
@@ -295,8 +252,8 @@ export default function Home() {
             <Image
               src="/mamu.jpg"
               alt="Dr. Tahir Mohammad Warsi"
-              width={400} // Adjust based on your design (e.g., typical card width)
-              height={360} // Matches h-90 (90 * 4 = 360px)
+              width={400}
+              height={360}
               className="w-full h-90 object-cover rounded-t-lg"
             />
             <div className="p-6 text-left">
@@ -304,10 +261,9 @@ export default function Home() {
                 Dr. Tahir Mohammad Warsi
               </p>
               <p className="text-green-600 mt-1">
-                {" "}
                 Senior Homeopathic Specialist
               </p>
-              <p> 15+ years expeience</p>
+              <p>15+ years experience</p>
             </div>
           </div>
 
@@ -324,14 +280,14 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               What Our Patients Say
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Don&apos;t just take our word for it. Hear from patients who have
+              Don't just take our word for it. Hear from patients who have
               experienced the benefits of our homeopathic treatments.
             </p>
           </div>
@@ -355,7 +311,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-50">
+      <section className="py-20 bg-green-50">
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="flex flex-col md:flex-row">

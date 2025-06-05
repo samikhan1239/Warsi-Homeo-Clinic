@@ -16,8 +16,7 @@ export default function BlogPage() {
       title: "Boost Your Immunity Naturally",
       excerpt:
         "Discover the top homeopathic remedies to strengthen your immune system.",
-      image:
-        "https://images.pexels.com/photos/16159904/pexels-photo-16159904/free-photo-of-glass-of-water-and-bottle-of-pills-on-table.jpeg",
+      image: "/p6.png",
       category: "Wellness",
       author: "Dr. Anjali Sharma",
       readTime: "5 min read",
@@ -26,8 +25,7 @@ export default function BlogPage() {
       id: "2",
       title: "Homeopathy for Stress Relief",
       excerpt: "Learn how homeopathy can help manage stress and anxiety.",
-      image:
-        "https://images.pexels.com/photos/5726791/pexels-photo-5726791.jpeg",
+      image: "/p7.png",
       category: "Homeopathy",
       author: "Dr. Rajiv Mehta",
       readTime: "4 min read",
@@ -37,8 +35,7 @@ export default function BlogPage() {
       title: "Natural Remedies for Allergies",
       excerpt:
         "Explore effective homeopathic treatments for seasonal allergies.",
-      image:
-        "https://images.pexels.com/photos/3865794/pexels-photo-3865794.jpeg",
+      image: "/p13.png",
       category: "Remedies",
       author: "Dr. Priya Verma",
       readTime: "6 min read",
@@ -89,11 +86,20 @@ export default function BlogPage() {
             {[
               {
                 id: 1,
-                title: "Natural Remedy for Dry Cough",
-                videoId: "u5aCUb5idgI",
+                title: "Carbo Veg",
+                videoId: "WWxj7PNKqvc",
               },
-              { id: 2, title: "Skin Whitening", videoId: "N3boKti0OOI" },
-              { id: 3, title: "Thyroid", videoId: "/e8lyO_m6tMk" },
+              { id: 2, title: "Indigestion", videoId: "ZVVL-JORxzY" },
+              {
+                id: 3,
+                title: "Discoloration on face",
+                videoId: "/pkKge-u73DA",
+              },
+              {
+                id: 4,
+                title: "Joint Pain",
+                videoId: "DYQ9RJCVFP8",
+              },
             ].map((video) => (
               <div key={video.id} className="bg-white rounded-lg shadow-md p-4">
                 <iframe
@@ -146,11 +152,11 @@ export default function BlogPage() {
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2">
               <Image
-                src="https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg"
+                src="/p1.jpg"
                 alt="Featured post"
-                width={600} // Adjust based on your design
-                height={400} // Adjust based on your design
-                className="w-full h-full object-cover"
+                width={100} // Adjust based on your design
+                height={100} // Adjust based on your design
+                className="w-full h-[250px] object-cover"
               />
             </div>
             <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
@@ -188,13 +194,13 @@ export default function BlogPage() {
               key={post.id}
               className="bg-white rounded-lg shadow-md hover:shadow-lg transition"
             >
-              <div className="relative h-48">
+              <div className="relative h-49">
                 <Image
                   src={post.image}
                   alt={post.title}
                   width={400} // Adjust based on your design
                   height={192} // Match the h-48 (48 * 4 = 192px)
-                  className="w-full h-full object-cover"
+                  className="w-full h-[250px] object-cover"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-green-600 text-white text-sm px-3 py-1 rounded-full">
@@ -203,7 +209,7 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                <h3 className="text-xl font-bold text-gray-800  py-6">
                   {post.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>

@@ -75,7 +75,7 @@ export default function AdminAppointments() {
           <p><strong>Date:</strong> ${formatDate(appointment.date)}</p>
           <p><strong>Time:</strong> ${appointment.time || "N/A"}</p>
           <p><strong>Reason:</strong> ${appointment.reason || "N/A"}</p>
-          <p>Thank you for choosing WARSI HOMOEO CLINIC.</p>
+          <p>Thank you for choosing WARSI homeo CLINIC.</p>
         `
       );
       const updatedAppointments = fullAppointments.map((app) =>

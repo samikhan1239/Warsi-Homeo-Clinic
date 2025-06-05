@@ -59,11 +59,12 @@ const ContactPage = () => {
                       Visit Us
                     </h3>
                     <p className="text-gray-600">
-                      123 Healing Street
+                      Shop No 2
                       <br />
-                      Wellness Valley, CA 92345
+                      Lala Lajpat Rai Colony, Near Super Shadi Hall Bagh
+                      Dilkusha
                       <br />
-                      United States
+                      Raisen Road  Bhopal (MP)
                     </p>
                   </div>
                 </div>
@@ -77,9 +78,9 @@ const ContactPage = () => {
                       Call Us
                     </h3>
                     <p className="text-gray-600">
-                      +1 (555) 123-4567
+                      +91 7697160607
                       <br />
-                      +1 (555) 987-6543
+                      +91 8602036967
                     </p>
                   </div>
                 </div>
@@ -93,9 +94,7 @@ const ContactPage = () => {
                       Email Us
                     </h3>
                     <p className="text-gray-600">
-                      info@WARSI HOMOEO CLINIC.com
-                      <br />
-                      appointments@WARSI HOMOEO CLINIC.com
+                      appointments tahirmohammadwarsi@gmail.com
                     </p>
                   </div>
                 </div>
@@ -109,9 +108,7 @@ const ContactPage = () => {
                       Working Hours
                     </h3>
                     <p className="text-gray-600">
-                      Monday - Friday: 9am - 7pm
-                      <br />
-                      Saturday: 9am - 5pm
+                      Monday - Saturday: 6pm - 10pm
                       <br />
                       Sunday: Closed
                     </p>
