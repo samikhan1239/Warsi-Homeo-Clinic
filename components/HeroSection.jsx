@@ -13,7 +13,7 @@ const HeroSection = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/banner2.jpg" // Ensure this matches the path to your saved image
+            src="/banner2.png" // Ensure this matches the path to your saved image
             alt="Dr. Warsi Homeopathy Banner"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}

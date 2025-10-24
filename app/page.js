@@ -101,30 +101,32 @@ export default function Home() {
     <div className="font-[family-name:var(--font-geist-sans)]">
       {/* Hero Section */}
       <section className="relative py-20 md:py-24 lg:py-32 overflow-hidden bg-green-50">
-        <div className="">
-          <Image
-            src="/banner3.png"
-            alt="Herbal medicine background"
-            height={500}
-            width={500}
-          />
-          <div className="" /> {/* Overlay for better text readability */}
-        </div>
+        <div className="w-full relative z-10">
+          <div className="flex flex-col items-center">
+            <div className="w-full mb-8">
+              <Image
+                src="/banner3.png"
+                alt="Herbal medicine background"
+                height={400}
+                width={1920}
+                className="w-full h-auto object-cover rounded-lg shadow-md"
+              />
+            </div>
 
-        <div className="container mx-auto px-4 relative z-10 py-8">
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="/login"
-              className="bg-green-700 text-white hover:bg-white hover:text-green-700 px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
-            >
-              Book an Appointment
-            </Link>
-            <Link
-              href="/services"
-              className="border border-white text-green-700 hover:bg-white hover:text-green-700 px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
-            >
-              View Services
-            </Link>
+            <div className="container mx-auto px-4 flex flex-col sm:flex-col justify-center gap-4 w-full">
+              <Link
+                href="/login"
+                className="bg-green-700 text-white hover:bg-white hover:text-green-700 w-full px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
+              >
+                Book an Appointment
+              </Link>
+              <Link
+                href="/services"
+                className="border border-green-700 text-green-700 hover:bg-white hover:text-green-700 w-full px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
+              >
+                View Services
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -181,7 +183,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2">
               <Image
-                src="/banner2.jpg"
+                src="/banner2.png"
                 alt="Homeopathic medicines and herbs"
                 width={1260}
                 height={750}
