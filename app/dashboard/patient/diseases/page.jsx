@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { Input } from "@/components/ui/input";
+import { Input } from "../../../../components/ui/input";
 import { useDebounce } from "use-debounce";
 import Image from "next/image";
 

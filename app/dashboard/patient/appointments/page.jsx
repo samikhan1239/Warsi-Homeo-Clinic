@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../../../components/ui/button";
 
 export default function PatientAppointments() {
   const [appointments, setAppointments] = useState([]);

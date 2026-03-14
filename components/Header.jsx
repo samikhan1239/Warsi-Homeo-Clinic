@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, User } from "lucide-react";
-import { verifyToken } from "@/lib/jwt";
+import { verifyToken } from "../lib/jwt";
 import Image from "next/image";
 
 const Header = () => {

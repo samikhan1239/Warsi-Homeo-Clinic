@@ -8,6 +8,7 @@ import {
   UserCheck,
   TrendingUp,
   Headphones,
+  Leaf,
 } from "lucide-react";
 import ServiceCard from "../components/ui/ServiceCard";
 import DoctorCard from "../components/ui/DoctorCard";
@@ -100,51 +101,138 @@ export default function Home() {
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-24 lg:py-32 overflow-hidden bg-green-50">
-        <div className="w-full relative z-10">
-          <div className="flex flex-col items-center">
-            <div className="w-full mb-8">
-              <Image
-                src="/banner3.png"
-                alt="Herbal medicine background"
-                height={400}
-                width={1920}
-                className="w-full h-auto object-cover rounded-lg shadow-md"
-              />
+    
+  <section className="relative py-20 md:py-28 lg:py-32 bg-gradient-to-b from-sage-50 to-white overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/20 rounded-full blur-3xl -mr-48 -mt-48" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-100/20 rounded-full blur-3xl -ml-48 -mb-48" />
+
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl relative z-10">
+        {/* Main grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Content */}
+          <div className="space-y-8 animate-fade-in">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-full">
+              <Leaf className="w-4 h-4 text-emerald-700" />
+              <span className="text-sm font-medium text-emerald-700">Rooted in Nature & Science</span>
             </div>
 
-            <div className="container mx-auto px-4 flex flex-col sm:flex-col justify-center gap-4 w-full">
+            {/* Headline */}
+            <div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+                Healing through
+                <span className="block text-emerald-700">natural wellness</span>
+              </h1>
+              <p className="text-lg text-neutral-600 leading-relaxed max-w-xl">
+                Evidence-based herbal medicine combined with traditional wisdom. Experience personalized care designed for your unique health journey.
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
-                href="/login"
-                className="bg-green-700 text-white hover:bg-white hover:text-green-700 w-full px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
+                href="/appointment"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 text-white font-semibold rounded-lg hover:bg-emerald-800 transition-all duration-300 hover:shadow-lg"
               >
-                Book an Appointment
+                Book Consultation
+                <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/services"
-                className="border border-green-700 text-green-700 hover:bg-white hover:text-green-700 w-full px-6 py-3 rounded-full font-medium transition-colors shadow-md hover:shadow-lg text-center"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-neutral-200 text-neutral-900 font-semibold rounded-lg hover:border-emerald-700 hover:bg-emerald-50 transition-all duration-300"
               >
-                View Services
+                Explore Services
               </Link>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-neutral-200">
+              <div>
+                <div className="text-2xl font-bold text-emerald-700">500+</div>
+                <p className="text-sm text-neutral-600">Happy Clients</p>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-emerald-700">15+</div>
+                <p className="text-sm text-neutral-600">Years Experience</p>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-emerald-700">100%</div>
+                <p className="text-sm text-neutral-600">Natural Remedies</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Image */}
+          <div className="relative hidden lg:block animate-fade-in-right">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              {/* Image frame with accent */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl" />
+              <Image
+                src="/banner3.png"
+                alt="Natural herbal medicine preparation with fresh herbs and mortar"
+                width={600}
+                height={700}
+                className="w-full h-auto object-cover"
+                priority
+                quality={85}
+              />
+            </div>
+
+            {/* Floating card for visual interest */}
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl max-w-xs">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
+                  <Leaf className="w-6 h-6 text-emerald-700" />
+                </div>
+                <div>
+                  <p className="font-semibold text-neutral-900">Certified Organic</p>
+                  <p className="text-sm text-neutral-600">Sustainably sourced</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 120"
-            className="w-full h-auto"
-          >
-            <path
-              fill="#ffffff"
-              fillOpacity="1"
-              d="M0,96L80,80C160,64,320,32,480,32C640,32,800,64,960,64C1120,64,1280,32,1360,16L1440,0L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-            ></path>
-          </svg>
+        {/* Benefits grid - below on mobile, integrated above on desktop */}
+        <div className="lg:hidden mt-16 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="p-6 bg-white border border-neutral-200 rounded-xl hover:shadow-md transition-shadow">
+            <Leaf className="w-8 h-8 text-emerald-700 mb-3" />
+            <h3 className="font-semibold text-neutral-900 mb-2">100% Natural</h3>
+            <p className="text-sm text-neutral-600">No synthetic additives or harmful chemicals</p>
+          </div>
+          <div className="p-6 bg-white border border-neutral-200 rounded-xl hover:shadow-md transition-shadow">
+            <Leaf className="w-8 h-8 text-emerald-700 mb-3" />
+            <h3 className="font-semibold text-neutral-900 mb-2">Science-Backed</h3>
+            <p className="text-sm text-neutral-600">Evidence-based formulations and methods</p>
+          </div>
+          <div className="p-6 bg-white border border-neutral-200 rounded-xl hover:shadow-md transition-shadow">
+            <Leaf className="w-8 h-8 text-emerald-700 mb-3" />
+            <h3 className="font-semibold text-neutral-900 mb-2">Personalized Care</h3>
+            <p className="text-sm text-neutral-600">Tailored treatments for your unique needs</p>
+          </div>
+          <div className="p-6 bg-white border border-neutral-200 rounded-xl hover:shadow-md transition-shadow">
+            <Leaf className="w-8 h-8 text-emerald-700 mb-3" />
+            <h3 className="font-semibold text-neutral-900 mb-2">Holistic Approach</h3>
+            <p className="text-sm text-neutral-600">Mind, body, and spirit wellness</p>
+          </div>
         </div>
-      </section>
+      </div>
 
+      {/* Mobile image - show below content on mobile */}
+      <div className="lg:hidden mt-12 px-6 sm:px-8">
+        <div className="relative rounded-2xl overflow-hidden shadow-xl">
+          <Image
+            src="/banner3.png"
+            alt="Natural herbal medicine preparation with fresh herbs and mortar"
+            width={600}
+            height={400}
+            className="w-full h-auto object-cover"
+            quality={85}
+          />
+        </div>
+      </div>
+    </section>
       {/* About Section */}
       <section className=" bg-gray-50">
         <div className="container mx-auto px-4">

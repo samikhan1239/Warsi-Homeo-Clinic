@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Mail, User, Lock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "../../../../components/ui/button";
+import { Input } from "../../../../components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../../components/ui/card";
 
 export default function PatientProfile() {
   const [form, setForm] = useState({ name: "", email: "" });
