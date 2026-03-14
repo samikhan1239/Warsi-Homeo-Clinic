@@ -289,7 +289,7 @@ export default function Home() {
               What Our Patients Say
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Hear from patients who have
+              Dont just take our word for it. Hear from patients who have
               experienced the benefits of our homeopathic treatments.
             </p>
           </div>
