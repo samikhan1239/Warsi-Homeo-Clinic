@@ -107,7 +107,7 @@ export default function Home() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/20 rounded-full blur-3xl -mr-48 -mt-48" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-100/20 rounded-full blur-3xl -ml-48 -mb-48" />
 
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl relative z-10">
+      <div className="container mx-auto  px-4">
         {/* Main grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
@@ -122,7 +122,7 @@ export default function Home() {
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
                 Healing through
-                <span className="block text-emerald-700">natural wellness</span>
+                <span className="block text-green-600 ">natural wellness</span>
               </h1>
               <p className="text-lg text-neutral-600 leading-relaxed max-w-xl">
                 Evidence-based herbal medicine combined with traditional wisdom. Experience personalized care designed for your unique health journey.
@@ -133,7 +133,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/appointment"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 text-white font-semibold rounded-lg hover:bg-emerald-800 transition-all duration-300 hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg hover:bg-emerald-800 transition-all duration-300 hover:shadow-lg"
               >
                 Book Consultation
                 <ArrowRight className="w-4 h-4" />
