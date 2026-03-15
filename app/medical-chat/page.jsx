@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 export default function MedicalChat() {
 
@@ -8,6 +8,9 @@ export default function MedicalChat() {
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(false)
   const [speaking, setSpeaking] = useState(false)
+  const [listening, setListening] = useState(false)
+
+  const recognitionRef = useRef(null)
 
   const sendMessage = async () => {
 
@@ -43,6 +46,7 @@ export default function MedicalChat() {
     setMessage("")
   }
 
+
   const speak = (text) => {
 
     speechSynthesis.cancel()
@@ -59,10 +63,58 @@ export default function MedicalChat() {
     speechSynthesis.speak(speech)
   }
 
+
   const stopVoice = () => {
     speechSynthesis.cancel()
     setSpeaking(false)
   }
+
+
+  // 🎤 START VOICE INPUT
+  const startListening = () => {
+
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition
+
+    if (!SpeechRecognition) {
+      alert("Speech recognition not supported in this browser")
+      return
+    }
+
+    const recognition = new SpeechRecognition()
+
+    recognition.lang = "en-US"
+    recognition.interimResults = false
+
+    recognition.onstart = () => {
+      setListening(true)
+    }
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript
+      setMessage(transcript)
+      setListening(false)
+    }
+
+    recognition.onerror = () => {
+      setListening(false)
+    }
+
+    recognition.onend = () => {
+      setListening(false)
+    }
+
+    recognition.start()
+
+    recognitionRef.current = recognition
+  }
+
+
+  const stopListening = () => {
+    recognitionRef.current?.stop()
+    setListening(false)
+  }
+
 
   return (
     <div className="h-screen flex flex-col bg-[#F6FBF7]">
@@ -92,6 +144,7 @@ export default function MedicalChat() {
       <div className="flex-1 overflow-y-auto px-4 py-6 max-w-3xl w-full mx-auto">
 
         {messages.length === 0 && (
+
           <div className="text-center mt-20 text-gray-500">
 
             <div className="text-4xl mb-4">🩺</div>
@@ -105,6 +158,7 @@ export default function MedicalChat() {
             </p>
 
           </div>
+
         )}
 
 
@@ -164,12 +218,33 @@ export default function MedicalChat() {
             onKeyDown={(e)=> e.key === "Enter" && sendMessage()}
           />
 
+
+          {/* 🎤 Mic Button */}
+
+          {!listening ? (
+            <button
+              onClick={startListening}
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 rounded-xl"
+            >
+              🎤
+            </button>
+          ) : (
+            <button
+              onClick={stopListening}
+              className="bg-red-500 text-white px-4 rounded-xl animate-pulse"
+            >
+              ⏹
+            </button>
+          )}
+
+
           <button
             onClick={sendMessage}
             className="bg-green-600 hover:bg-green-700 text-white px-6 rounded-xl text-sm font-medium"
           >
             Ask
           </button>
+
 
           {speaking && (
             <button
@@ -181,6 +256,13 @@ export default function MedicalChat() {
           )}
 
         </div>
+
+
+        {listening && (
+          <p className="text-xs text-blue-600 mt-2 text-center">
+            🎤 Listening...
+          </p>
+        )}
 
         {speaking && (
           <p className="text-xs text-green-600 mt-2 text-center">
